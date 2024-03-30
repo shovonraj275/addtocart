@@ -1,0 +1,10 @@
+$(document).ready(function(){
+var productItem = [{
+		{
+			productName: "Luxury Ultra thin Wrist Watch",
+			price: "500.00",
+			photo: "laptop.jpg"
+		}]
+	showProductGallery(productItem);
+	showCartTable();
+});  ---- memning
