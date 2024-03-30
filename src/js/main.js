@@ -63,10 +63,10 @@ function showOnHTMLFileAndarreey(htmlshowproduct){
     htmlshowproduct.forEach(function(hmtlProductGet){
         productHTML_page += '<div class="grid_content">'+
              '<img src="src/img/' +hmtlProductGet.img+'">'+
-                    '<h3 class="productnamee">prouct namee : '+ hmtlProductGet.nameee +'</h3>'+
+                    '<h3 class="productnamee">prouct namee  : '+ hmtlProductGet.namee +'</h3>'+
                    
                     '<h3 class="price">Price : $ <span>'  + hmtlProductGet.price +  '</span></h3>'+
-                    '<h3> Catagory  ' + hmtlProductGet.catagory + '</h3>'+
+                    '<h3 class="dddddddd"> Catagory  ' + hmtlProductGet.catagory + '</h3>'+
                     '<input type="text" class="product_uantity" namee="quantity" value="1" size="2" />'+
                    '<button type="button"   onClick="addToCart(this)" class="btn_crat">Add to cart</button>'+
                 //    '<button type="button" class="btn_fav">Add to favourite</button>'+
@@ -83,13 +83,15 @@ function addToCart(element){
     var price = $(productPrentdiv).find('.price span').text();
     // এখনে মূল্য একটি ভ্যরিএব্লে তেরী করার হল ও মূল্য spam   কে আনা হলো
     var productnamee = $(productPrentdiv).find('.productnamee').text();
-    var quantity = $(productPrentdiv).find('.quantity').val();
+    var catagory = $(productPrentdiv).find('.dddddddd').text();
+    var quantity = $(productPrentdiv).find('.product_uantity').val();
 
     // এখনে মুলত cart page a নেওয়া হবে JSON.stringify ki
     var cartPageItem = {
         productnamee: productnamee,
         price: price,
-        quantity: quantity
+        quantity: quantity,
+        catagory:catagory,
     };
     // এখানে cart page পেজে এ ডাটা নিয়ে যাওয়া হচ্ছে 
     var cqartItemJson =JSON.stringify(cartPageItem);
@@ -106,21 +108,6 @@ function addToCart(element){
     showCartPage();
 
 }
-// fully remove imtes hobe
-function emptyCart(){
-    if (sessionStorage.getItem('CartInputJS')){
-        sessionStorage.removeItem("CartInputJS");
-        showCartPage();
-    }
-}
-
-function removeItems(index){
-    if (sessionStorage.getItem('CartInputJS')){
-        var soppinggCart = JSON.parse(sessionStorage.getItem('CartInputJS'));
-        sessionStorage.removeItem(soppinggCart[index]);
-        showCartPage();
-    }
-}
 
 function showCartPage(){
     var cartRow = "";
@@ -130,16 +117,16 @@ function showCartPage(){
     var price = 0;
     var quantity = 0;
     var subtotel = 0 ;
-    if (sessionStorage.getItem('CartInputJS'));{
+    if (sessionStorage.getItem('CartInputJS')) {
          var soppinggCart = JSON.parse(sessionStorage.getItem('CartInputJS'));
     itemCount = soppinggCart.length;
-    soppinggCart.forEach(function(hmtlProductGet) {
+        soppinggCart.forEach(function(hmtlProductGet) {
      var cartPageItem = JSON.parse(hmtlProductGet);
      price = parseFloat(cartPageItem.price);
-     quantity = parseInt (cartPageItem);
+     quantity = parseInt (cartPageItem.quantity);
      subtotel = price * quantity;
      cartRow += "<tr>" +
-     "<td>" + cartPageItem.nameee + "</td>" +
+     "<td>" + cartPageItem.productnamee + "</td>" +
      "<td class='text-right'>$" + price.toFixed(2) + "</td>" +
      "<td class='text-right'>" + quantity + "</td>" +
      "<td class='text-right'>$" + subtotel.toFixed(2) + "</td>" +
@@ -154,6 +141,22 @@ function showCartPage(){
 // parseFloat mane ki  parseInt ?
 
 
+/*
+// fully remove imtes hobe
+function emptyCart(){
+    if (sessionStorage.getItem('CartInputJS')){
+        sessionStorage.removeItem("CartInputJS");
+        showCartPage();
+    }
+}
+
+function removeItems(index){
+    if (sessionStorage.getItem('CartInputJS')){
+        var soppinggCart = JSON.parse(sessionStorage.getItem('CartInputJS'));
+        sessionStorage.removeItem(soppinggCart[index]);
+        showCartPage();
+    }
+}*/
 
 
 
