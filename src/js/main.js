@@ -63,7 +63,7 @@ function showOnHTMLFileAndarreey(htmlshowproduct){
     htmlshowproduct.forEach(function(hmtlProductGet){
         productHTML_page += '<div class="grid_content">'+
              '<img src="src/img/' +hmtlProductGet.img+'">'+
-                    '<h3 class="productnamee">prouct namee  : '+ hmtlProductGet.namee +'</h3>'+
+                    '<h3>prouct namee   : <span class="productnamee">'+ hmtlProductGet.namee +'</span></h3>'+
                    
                     '<h3 class="price">Price : $ <span>'  + hmtlProductGet.price +  '</span></h3>'+
                     '<h3 class="dddddddd"> Catagory  ' + hmtlProductGet.catagory + '</h3>'+
@@ -136,12 +136,12 @@ function showCartPage(){
     }
     $('#cartTableBody').html(cartRow);
 	$('#itemCount').text(itemCount);
-	$('#totalAmount').text("$" + grandTotal.toFixed(2));
+    $('#totalAmount').text("$" + garndTotel.toFixed(2));
 }
 // parseFloat mane ki  parseInt ?
 
 
-/*
+
 // fully remove imtes hobe
 function emptyCart(){
     if (sessionStorage.getItem('CartInputJS')){
@@ -156,7 +156,7 @@ function removeItems(index){
         sessionStorage.removeItem(soppinggCart[index]);
         showCartPage();
     }
-}*/
+}
 
 
 
