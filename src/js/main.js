@@ -45,6 +45,12 @@ $(document).ready(function() {
             img:"03 (6).jpg",
         },
         {
+            catagory:"Shoes",
+            namee: " Boys shoes",
+            price: "1900",
+            img:"new (1).jpeg",
+        },
+        {
             catagory:"boys Shoes",
             namee: "High Boys shoes",
             price: "3200",
@@ -75,7 +81,6 @@ function showOnHTMLFileAndarreey(htmlshowproduct){
     });
     $('#js_input').html(productHTML_page);
 }
-//this bolte ki bolcha
 
 // add to cart
 function addToCart(element){
@@ -188,57 +193,6 @@ function openNav() {
 
 
 
-/*
-
-function catPageOpenOne() {
-   
-    let html_div = document.querySelector('.show');
-    let js_innerHTML_create = document.createElement('div');
-    js_innerHTML_create.innerHTML = `
-<!-- html-->
-<div style="padding: 20px;background:gray; ">
-    <h1>${poductList.CatShoes[0].Productnamee}</h1>
-    <p> Quntity <span id="CartQuntityValueone"> 0</span></p>
-    <span id="CartQuntityprcieone"> Totel Price 0</span>
-    <br/>
-    <button type="button" onclick="addOne()" class="btnUp"> + </button>
-    <button type="button" class="btnDown" onclick="downOne()"> - </button> 
-   
-</div>
-
-`
-    html_div.appendChild(js_innerHTML_create);
-
-}
-
-
-
-
-
-*/
-let cratval = 0;
-
-function addcart() {
-    cratval = cratval + 1;
-    document.querySelector('.ic_po_ab_cart').innerHTML = cratval;
-}
-
-let favVal = 0;
-
-function addfav() {
-    favVal = favVal + 1;
-    document.querySelector('.ic_po_ab_fav').innerHTML = favVal;
-}
-
-
-
-// function Open() {
-//     document.getElementById('cartPage').style.width = "500px";
-// }
-
-// function closeNav() {
-//     document.getElementById('cartPage').style.width = "0px";
-// }
 
 
 
@@ -246,38 +200,6 @@ function addfav() {
 
 
 
-
-
-
-// }
-// let val = 0;
-// function add(){
-//     val= val +1;
-//     document.querySelector(".Value").innerHTML=val;
-//     document.querySelector(".Value2").innerHTML=val * poductList.CatShoes[0].Price;
-// }
-// function down(){
-//     val = val -1;
-//     document.querySelector(".Value").innerHTML=val;
-// }
-
-
-
-// html show
-// let HTMLInput = document.querySelector('.owl-carousel');
-// RCCESID.forEach((yx) => {
-//     let create = document.createElement('div');
-//     create.innerHTML = ``;
-//     HTMLInput.appendChild(create);
-// });
-// let htmlInputCart = document.querySelector('#cartPage');
-// function add(){
-//     let createCartPage = document.createElement('div');
-//     createCartPage.innerHTML = `
-//     <h6>${yx[0].price}</H6>
-//     `;
-//     htmlInputCart.appendChild(createCartPage);
-// }
 
 
 
