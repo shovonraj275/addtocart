@@ -159,7 +159,17 @@ function removeItems(index){
 }
 
 
-
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidebar").style.width = "100%";
+    document.getElementById("main").style.marginLeft = "100%";
+  }
+  
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }
 
 
 
@@ -206,19 +216,19 @@ function catPageOpenOne() {
 
 
 */
-// let cratval = 0;
+let cratval = 0;
 
-// function addcart() {
-//     cratval = cratval + 1;
-//     document.querySelector('.ic_po_ab_cart').innerHTML = cratval;
-// }
+function addcart() {
+    cratval = cratval + 1;
+    document.querySelector('.ic_po_ab_cart').innerHTML = cratval;
+}
 
-// let favVal = 0;
+let favVal = 0;
 
-// function addfav() {
-//     favVal = favVal + 1;
-//     document.querySelector('.ic_po_ab_fav').innerHTML = favVal;
-// }
+function addfav() {
+    favVal = favVal + 1;
+    document.querySelector('.ic_po_ab_fav').innerHTML = favVal;
+}
 
 
 

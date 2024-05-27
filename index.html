@@ -9,7 +9,63 @@
     <link rel="stylesheet" href="./src/css/jquery.bxslider.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <title>Apex </title>
-   
+   <style>
+    /* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #f1f1f1; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+   </style>
 </head>
 
 <body>
@@ -80,32 +136,44 @@
             </video>
         </div>
     </section> -->
-    <div id="CartInputJS">
-        <div class="txt-heading">
-            <h1>Shopping cart</h1>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="CartInputJS">
+            <div class="txt-heading">
+                <h1>Shopping cart</h1>
+            </div>
+            <a onClick="emptyCart()" id="btnEmpty">Empty Cart</a>
+            <table class="tbl-cart" cellpadding="10" cellspacing="1">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th class='text-right' width="10%">Unit Price</th>
+                        <th class='text-right' width="5%">Quantity</th>
+                        <th class='text-right' width="10%">Sub Total</th>
+                    </tr>
+                </thead>
+                <!--  Cart table to load data on "add to cart" action -->
+                <tbody id="cartTableBody">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="text-right">Total:</td>
+                        <td id="itemCount" class="text-right" colspan="2"></td>
+                        <td id="totalAmount" class="text-right"></td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
-        <a onClick="emptyCart()" id="btnEmpty">Empty Cart</a>
-        <table class="tbl-cart" cellpadding="10" cellspacing="1">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th class='text-right' width="10%">Unit Price</th>
-                    <th class='text-right' width="5%">Quantity</th>
-                    <th class='text-right' width="10%">Sub Total</th>
-                </tr>
-            </thead>
-            <!--  Cart table to load data on "add to cart" action -->
-            <tbody id="cartTableBody">
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td class="text-right">Total:</td>
-                    <td id="itemCount" class="text-right" colspan="2"></td>
-                    <td id="totalAmount" class="text-right"></td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
+    
+      </div>
+      
+      <div id="main">
+        <button class="openbtn" onclick="openNav()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+        <h2>Show Cart page</h2>
+        <p>Content...</p>
+      </div>
+
+
 
 
 <div id="">
@@ -596,8 +664,8 @@
             </div>
         </div>
     </section> --> 
-    <!-- <script src="https://kit.fontawesome.com/0869400e8c.js" crossorigin="anonymous"></script>
-    <script src="./src/js/jquary.js"></script>
+    <script src="https://kit.fontawesome.com/0869400e8c.js" crossorigin="anonymous"></script>
+   <!--  <script src="./src/js/jquary.js"></script>
     <script src="./src/js/owl.carousel.js"></script>
     <script src="./src/js/jquery.bxslider.min.js"></script> -->
     
