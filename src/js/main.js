@@ -49,12 +49,6 @@ $(document).ready(function() {
             namee: " Boys shoes",
             price: "1900",
             img:"new (1).jpeg",
-        },
-        {
-            catagory:"boys Shoes",
-            namee: "High Boys shoes",
-            price: "3200",
-            img:"new (2).jpeg",
         }];
     showOnHTMLFileAndarreey(RCCESID);
     // variable k html  a anner jonno kin sothik jani na 
@@ -69,7 +63,7 @@ function showOnHTMLFileAndarreey(htmlshowproduct){
     htmlshowproduct.forEach(function(hmtlProductGet){
         productHTML_page += '<div class="grid_content">'+
              '<img src="src/img/' +hmtlProductGet.img+'">'+
-                    '<h3>prouct namee   : <span class="productnamee">'+ hmtlProductGet.namee +'</span></h3>'+
+                    '<h3>prouct name   : <span class="productnamee">'+ hmtlProductGet.namee +'</span></h3>'+
                    
                     '<h3 class="price">Price : $ <span>'  + hmtlProductGet.price +  '</span></h3>'+
                     '<h3 class="dddddddd"> Catagory  ' + hmtlProductGet.catagory + '</h3>'+
